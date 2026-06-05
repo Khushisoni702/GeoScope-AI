@@ -155,7 +155,7 @@ Deployment Link:
 
 ### PDF Report
 
-![Analysis](Screenshots/Prediction Analysis.png)
+![Prediction Analysis](Screenshots/Prediction Analysis.png)
 
 ---
 
