@@ -11,6 +11,8 @@ from io import BytesIO
 from datetime import datetime
 from reportlab.platypus import Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
+import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
 
 # ----------------------------
 # PAGE CONFIG
@@ -140,9 +142,7 @@ descriptions = {
 def load_my_model():
     return load_model(
         "geoscope_model.keras",
-        custom_objects={
-            "preprocess_input": preprocess_input
-        },
+        compile=False,
         safe_mode=False
     )
 
