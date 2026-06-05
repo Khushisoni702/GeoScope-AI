@@ -140,12 +140,13 @@ descriptions = {
 # ----------------------------
 @st.cache_resource
 def load_my_model():
-    return load_model(
+    return tf.keras.models.load_model(
         "geoscope_fixed.keras",
+        compile=False,
         custom_objects={
             "preprocess_input": preprocess_input
         },
-        compile=False
+        safe_mode=False
     )
 
 model = load_my_model()
