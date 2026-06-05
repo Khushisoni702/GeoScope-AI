@@ -142,8 +142,10 @@ descriptions = {
 def load_my_model():
     return load_model(
         "geoscope_model.keras",
-        compile=False,
-        safe_mode=False
+        custom_objects={
+            "preprocess_input": preprocess_input
+        },
+        compile=False
     )
 
 model = load_my_model()
@@ -217,7 +219,8 @@ if uploaded_file is not None:
             caption="Uploaded Image",
             use_container_width=True
         )
-
+        
+        image = image.convert("RGB")
         img = image.resize((224, 224))
 
         img_array = np.array(img)
