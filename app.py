@@ -141,7 +141,7 @@ descriptions = {
 @st.cache_resource
 def load_my_model():
     return load_model(
-        "geoscope_model.keras",
+        "geoscope_fixed.keras",
         custom_objects={
             "preprocess_input": preprocess_input
         },
@@ -219,7 +219,7 @@ if uploaded_file is not None:
             caption="Uploaded Image",
             use_container_width=True
         )
-        
+
         image = image.convert("RGB")
         img = image.resize((224, 224))
 
