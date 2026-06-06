@@ -13,6 +13,8 @@ from reportlab.platypus import Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 import os
 os.environ["TF_USE_LEGACY_KERAS"] = "1"
+st.write("TF:", tf.__version__)
+st.write("Keras:", tf.keras.__version__)
 
 # ----------------------------
 # PAGE CONFIG
@@ -140,14 +142,23 @@ descriptions = {
 # ----------------------------
 @st.cache_resource
 def load_my_model():
-    return tf.keras.models.load_model(
-        "geoscope_fixed.keras",
-        compile=False,
-        custom_objects={
-            "preprocess_input": preprocess_input
-        },
-        safe_model=False
-    )
+    try:
+        model = tf.keras.models.load_model(
+            "geoscope_fixed.keras",
+            compile=False,
+            custom_objects={
+                "preprocess_input": preprocess_input
+            },
+            safe_mode=False
+        )
+
+        st.success("Model loaded successfully")
+        return model
+
+    except Exception as e:
+        st.error(f"Model loading failed: {str(e)}")
+        st.exception(e)
+        raise
 
 model = load_my_model()
 
