@@ -14,7 +14,6 @@ from reportlab.lib.styles import getSampleStyleSheet
 import os
 os.environ["TF_USE_LEGACY_KERAS"] = "1"
 st.write("TF:", tf.__version__)
-st.write("Keras:", tf.keras.__version__)
 
 # ----------------------------
 # PAGE CONFIG
@@ -152,7 +151,6 @@ def load_my_model():
             safe_mode=False
         )
 
-        st.success("Model loaded successfully")
         return model
 
     except Exception as e:
