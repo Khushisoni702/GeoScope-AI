@@ -146,7 +146,6 @@ def load_my_model():
         custom_objects={
             "preprocess_input": preprocess_input
         },
-        safe_mode=False
     )
 
 model = load_my_model()
