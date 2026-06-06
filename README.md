@@ -139,7 +139,7 @@ The model demonstrates strong performance across all land-use categories while m
 
 Deployment Link:
 
-**[Add Streamlit Deployment URL Here]**
+**https://geoscope-ai.streamlit.app/**
 
 ---
 
