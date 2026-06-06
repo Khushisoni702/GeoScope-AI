@@ -13,7 +13,6 @@ from reportlab.platypus import Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 import os
 os.environ["TF_USE_LEGACY_KERAS"] = "1"
-st.write("TF:", tf.__version__)
 
 # ----------------------------
 # PAGE CONFIG
@@ -192,6 +191,7 @@ The system is trained on the EuroSAT RGB Dataset, a widely used benchmark datase
 To achieve high classification performance, the project leverages Transfer Learning with EfficientNetB0, enabling the model to learn powerful visual features from large-scale image datasets and adapt them for satellite image analysis.
 
 The platform demonstrates how Artificial Intelligence can be applied to Earth Observation, Remote Sensing, Environmental Monitoring, Urban Planning, and Land-Use Analysis through automated image classification.
+
 <b>Technologies Used</b><br>
 
 TensorFlow • Keras • EfficientNetB0 • Transfer Learning • Streamlit • Computer Vision • Remote Sensing
